@@ -38,6 +38,15 @@ int main()
 
     //create window object with specific dimensions and title
     sf::RenderWindow* window = new sf::RenderWindow(videoMode, "Space Invaders");
+    
+    // Player object
+    Player player;
+
+    // load player ship texture
+    player.player_texture.loadFromFile("assets/textures/player_ship.png");
+
+    // set the player sprite
+    player.player_sprite.setTexture(player.player_texture);
 
     // game loop
     while (window->isOpen()) {
@@ -48,24 +57,37 @@ int main()
                 window->close();
         }
 
+        // handling keyboard inputs
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+        {
+            player.move();
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+        {
+            player.move();
+        }
+
         // clear window
         window->clear(sf::Color::Blue);
 
+        // setting position of player sprite
+        player.player_sprite.setPosition(player.getPosition());
+
         // Draw Content here
         //-------------------
-
+        window->draw(player.player_sprite);
 
         // ------------------
      
         //displat the content
         window->display();
 
-        Player player;
-        std::cout << "\nPlayer Score: " << player.getScore() << "\n";
+       
+        //std::cout << "\nPlayer Score: " << player.getScore() << "\n";
 
-        player.setScore(100);
+        //player.setScore(100);
 
-        std::cout << "Player modified score: " << player.getScore() << "\n";
+        //std::cout << "Player modified score: " << player.getScore() << "\n";
     }
 
     return 0;
