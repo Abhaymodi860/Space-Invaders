@@ -16,19 +16,22 @@ class Player
       sf::Sprite player_sprite;
 
       // public set and get function
-      int getScore()
+      void move(float offsetX)
       {
-          return player_score;
+          position.x += offsetX;
       }
 
-      void setScore(int newScore)
+      int getMoveSpeed()
       {
-          player_score = newScore;
+          return movement_speed;
       }
 
-      void takeDamage() {};
-      void move() {};
-      void shootBullets() {};
+      sf::Vector2f getPosition() 
+      {
+          return position;
+      }
+
+      
 };
 
 int main()
@@ -60,11 +63,11 @@ int main()
         // handling keyboard inputs
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
         {
-            player.move();
+            player.move(-0.01f * player.getMoveSpeed());
         }
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
         {
-            player.move();
+            player.move(0.01f * player.getMoveSpeed());
         }
 
         // clear window
