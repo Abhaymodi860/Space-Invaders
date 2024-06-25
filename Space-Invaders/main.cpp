@@ -1,8 +1,10 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include "Header/GameService.h"
 
 using namespace std;
 
+/*
 class Player
 {
   private: 
@@ -54,28 +56,31 @@ class Player
       
 };
 
+*/
+
 int main()
 {
     // define the video mode (with dimensions)
-    sf::VideoMode videoMode = *(new sf::VideoMode(800, 600));
+    //sf::VideoMode videoMode = *(new sf::VideoMode(800, 600));
 
     //create window object with specific dimensions and title
-    sf::RenderWindow* window = new sf::RenderWindow(videoMode, "Space Invaders");
+    //sf::RenderWindow* window = new sf::RenderWindow(videoMode, "Space Invaders");
     
     // Player object
-    Player player;
+    //Player player;
 
-    Player player1;
+    //Player player1;
 
-    Player player2(100, 3);
+    //Player player2(100, 3);
 
     // load player ship texture
-    player.player_texture.loadFromFile("assets/textures/player_ship.png");
+    //player.player_texture.loadFromFile("assets/textures/player_ship.png");
 
     // set the player sprite
-    player.player_sprite.setTexture(player.player_texture);
+    //player.player_sprite.setTexture(player.player_texture);
 
     // game loop
+    /*
     while (window->isOpen()) {
         sf::Event event;
         while (window->pollEvent(event)) {
@@ -115,6 +120,16 @@ int main()
         //player.setScore(100);
 
         //std::cout << "Player modified score: " << player.getScore() << "\n";
+    }
+    */
+
+    GameService game_service;
+    game_service.ignite();
+
+    while (game_service.isRunning())
+    {
+        game_service.update();
+        game_service.render();
     }
 
     return 0;
