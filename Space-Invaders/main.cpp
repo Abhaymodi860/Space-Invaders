@@ -1,6 +1,8 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
+using namespace std;
+
 class Player
 {
   private: 
@@ -14,6 +16,24 @@ class Player
       // public properties
       sf::Texture player_texture;
       sf::Sprite player_sprite;
+
+      Player()
+      {
+          cout << "Default Construtctor called\n";
+      };
+
+      Player(int initialHealth, int speed)
+      {
+          health = initialHealth;
+          movement_speed = speed;
+
+          cout << "Custom constructor called! Player created with health: " << health << ", speed: " << movement_speed << "\n";
+      };
+
+      ~Player()
+      {
+          cout << "PLayer destroyed. Health: " << health << ", Movement Speed: " << movement_speed << endl;
+      }
 
       // public set and get function
       void move(float offsetX)
@@ -44,6 +64,10 @@ int main()
     
     // Player object
     Player player;
+
+    Player player1;
+
+    Player player2(100, 3);
 
     // load player ship texture
     player.player_texture.loadFromFile("assets/textures/player_ship.png");
