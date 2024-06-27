@@ -1,14 +1,86 @@
 #include <SFML/Graphics.hpp>
+#include <iostream>
+#include "Header/GameService.h"
+
+using namespace std;
+
+/*
+class Player
+{
+  private: 
+      // private properties
+      int health = 3;
+      sf::Vector2f position = sf::Vector2f(200.0f, 100.0f);
+      int player_score = 0;
+      int movement_speed = 5;
+
+  public:
+      // public properties
+      sf::Texture player_texture;
+      sf::Sprite player_sprite;
+
+      Player()
+      {
+          cout << "Default Construtctor called\n";
+      };
+
+      Player(int initialHealth, int speed)
+      {
+          health = initialHealth;
+          movement_speed = speed;
+
+          cout << "Custom constructor called! Player created with health: " << health << ", speed: " << movement_speed << "\n";
+      };
+
+      ~Player()
+      {
+          cout << "PLayer destroyed. Health: " << health << ", Movement Speed: " << movement_speed << endl;
+      }
+
+      // public set and get function
+      void move(float offsetX)
+      {
+          position.x += offsetX;
+      }
+
+      int getMoveSpeed()
+      {
+          return movement_speed;
+      }
+
+      sf::Vector2f getPosition() 
+      {
+          return position;
+      }
+
+      
+};
+
+*/
 
 int main()
 {
     // define the video mode (with dimensions)
-    sf::VideoMode videoMode = *(new sf::VideoMode(800, 600));
+    //sf::VideoMode videoMode = *(new sf::VideoMode(800, 600));
 
     //create window object with specific dimensions and title
-    sf::RenderWindow* window = new sf::RenderWindow(videoMode, "My SFML Window");
+    //sf::RenderWindow* window = new sf::RenderWindow(videoMode, "Space Invaders");
+    
+    // Player object
+    //Player player;
+
+    //Player player1;
+
+    //Player player2(100, 3);
+
+    // load player ship texture
+    //player.player_texture.loadFromFile("assets/textures/player_ship.png");
+
+    // set the player sprite
+    //player.player_sprite.setTexture(player.player_texture);
 
     // game loop
+    /*
     while (window->isOpen()) {
         sf::Event event;
         while (window->pollEvent(event)) {
@@ -17,59 +89,47 @@ int main()
                 window->close();
         }
 
+        // handling keyboard inputs
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+        {
+            player.move(-0.01f * player.getMoveSpeed());
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+        {
+            player.move(0.01f * player.getMoveSpeed());
+        }
+
         // clear window
-        window->clear(sf::Color::Yellow);
+        window->clear(sf::Color::Blue);
+
+        // setting position of player sprite
+        player.player_sprite.setPosition(player.getPosition());
 
         // Draw Content here
         //-------------------
-        // Draw circle
-        sf::CircleShape circle(50);  // radius 50
-        circle.setFillColor(sf::Color::Green);
-        circle.setPosition(400, 300); // set position (x, y)
-        window->draw(circle);
-
-        // Create a rectangle shape
-        sf::RectangleShape rectangle(sf::Vector2f(100, 100));
-
-        // Set the position of the rectangle
-        rectangle.setPosition(10, 10);
-
-        rectangle.setFillColor(sf::Color::Red);
-
-        rectangle.setOutlineColor(sf::Color::Magenta);
-        rectangle.setOutlineThickness(5);
-        window->draw(rectangle);
-
-        sf::CircleShape Triangle(50, 3);  // radius 50
-        Triangle.setFillColor(sf::Color::Black);
-        Triangle.setPosition(700, 300); // set position (x, y)
-        window->draw(Triangle);
-
-        // displaying an image
-        sf::Texture outscal_texture;
-        outscal_texture.loadFromFile("assets/textures/outscal_logo.png");
-
-        sf::Sprite outscal_sprite;
-        outscal_sprite.setTexture(outscal_texture);
-
-        outscal_sprite.setPosition(200, 100);
-        outscal_sprite.setRotation(45);
-        outscal_sprite.setScale(0.5, 0.5);
-       
-        window->draw(outscal_sprite);
-
-        // displaying text
-        sf::Font font;
-        font.loadFromFile("assets/fonts/OpenSans.ttf");
-        sf::Text text("SFML is awesome!", font, 50);
-        text.setFillColor(sf::Color::Red);
-        text.setPosition(300, 200);
-        window->draw(text);
+        window->draw(player.player_sprite);
 
         // ------------------
      
         //displat the content
         window->display();
+
+       
+        //std::cout << "\nPlayer Score: " << player.getScore() << "\n";
+
+        //player.setScore(100);
+
+        //std::cout << "Player modified score: " << player.getScore() << "\n";
+    }
+    */
+
+    GameService game_service;
+    game_service.ignite();
+
+    while (game_service.isRunning())
+    {
+        game_service.update();
+        game_service.render();
     }
 
     return 0;
