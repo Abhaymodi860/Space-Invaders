@@ -133,16 +133,26 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="SourceCode\EventService.cpp" />
-    <ClCompile Include="SourceCode\GameService.cpp" />
-    <ClCompile Include="SourceCode\GraphicService.cpp" />
-    <ClCompile Include="SourceCode\ServiceLocator.cpp" />
+    <ClCompile Include="SourceCode\Event\EventService.cpp" />
+    <ClCompile Include="SourceCode\Gameplay\GameService.cpp" />
+    <ClCompile Include="SourceCode\Graphics\GraphicService.cpp" />
+    <ClCompile Include="SourceCode\Player\PlayerController.cpp" />
+    <ClCompile Include="SourceCode\Player\PlayerModel.cpp" />
+    <ClCompile Include="SourceCode\PlayerService.cpp" />
+    <ClCompile Include="SourceCode\Player\PlayerView.cpp" />
+    <ClCompile Include="SourceCode\Global\ServiceLocator.cpp" />
+    <ClCompile Include="SourceCode\TimeService.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\EventService.h" />
     <ClInclude Include="Header\GameService.h" />
     <ClInclude Include="Header\GraphicService.h" />
+    <ClInclude Include="Header\PlayerController.h" />
+    <ClInclude Include="Header\PlayerModel.h" />
+    <ClInclude Include="Header\Playerservice.h" />
+    <ClInclude Include="Header\PlayerView.h" />
     <ClInclude Include="Header\ServiceLocator.h" />
+    <ClInclude Include="Header\TimeService.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
