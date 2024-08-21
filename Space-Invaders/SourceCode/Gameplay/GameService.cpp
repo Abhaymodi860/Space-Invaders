@@ -27,11 +27,17 @@ namespace Main
 		initialize(); // Initialize services.
 	}
 
+	void GameService::showMainMenu()
+	{
+		setGameState(GameState::MAIN_MENU);
+	}
+
 	//initialize service locator and other variables
 	void GameService::initialize()
 	{
 		service_locator->initialize();
 		initializeVariables();
+		showMainMenu();
 	}
 
 	void GameService::initializeVariables()
