@@ -18,16 +18,16 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SourceCode\GameService.cpp">
+    <ClCompile Include="SourceCode\Gameplay\GameService.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SourceCode\ServiceLocator.cpp">
+    <ClCompile Include="SourceCode\Global\ServiceLocator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SourceCode\GraphicService.cpp">
+    <ClCompile Include="SourceCode\Graphics\GraphicService.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SourceCode\EventService.cpp">
+    <ClCompile Include="SourceCode\Event\EventService.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SourceCode\PlayerService.cpp">
@@ -36,13 +36,13 @@
     <ClCompile Include="SourceCode\TimeService.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SourceCode\PlayerModel.cpp">
+    <ClCompile Include="SourceCode\Player\PlayerModel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SourceCode\PlayerView.cpp">
+    <ClCompile Include="SourceCode\Player\PlayerView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SourceCode\PlayerController.cpp">
+    <ClCompile Include="SourceCode\Player\PlayerController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

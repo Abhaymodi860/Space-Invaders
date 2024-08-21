@@ -1,41 +1,41 @@
 #pragma once
-
 #include <SFML/Graphics.hpp>
+#include "../Header/Player/PlayerController.h"
 
-class PlayerService
-{
 
-private:
+namespace Player {
+    class PlayerService
+    {
 
-    int health = 3;
-    sf::Vector2f position = sf::Vector2f(200.0f, 100.0f);
-    //int movement_speed = 5;
-    int player_score = 0;
-    float movement_speed = 350.0f;
+    private:
 
-    const sf::String player_texture_path = "assets/textures/player_ship.png";
+        int health = 3;
+        sf::Vector2f position = sf::Vector2f(200.0f, 100.0f);
+        int movement_speed = 5;
+        int player_score = 0;
 
-    sf::Texture player_texture;
-    sf::Sprite player_sprite;
+        const sf::String player_texture_path = "assets/textures/player_ship.png";
 
-    sf::RenderWindow* game_window; //as always
+        sf::Texture player_texture;
+        sf::Sprite player_sprite;
 
-    void initializePlayerSprite();
-    void processPlayerInput();
+        sf::RenderWindow* game_window; //as always
 
-public:
+        void initializePlayerSprite();
+        void processPlayerInput();
 
-    PlayerService();
-    ~PlayerService();
+    public:
 
-    void initialize();
-    void update();
-    void render();
+        PlayerService();
+        ~PlayerService();
 
-    //void move(float offsetX);
-    void moveLeft();
-    void moveRight();
-    int getMoveSpeed();
-    sf::Vector2f getPosition();
+        void initialize();
+        void update();
+        void render();
 
-};
+        void move(float offsetX);
+        int getMoveSpeed();
+        sf::Vector2f getPlayerPosition();
+
+    };
+}

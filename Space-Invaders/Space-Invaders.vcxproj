@@ -133,14 +133,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="SourceCode\EventService.cpp" />
-    <ClCompile Include="SourceCode\GameService.cpp" />
-    <ClCompile Include="SourceCode\GraphicService.cpp" />
-    <ClCompile Include="SourceCode\PlayerController.cpp" />
-    <ClCompile Include="SourceCode\PlayerModel.cpp" />
+    <ClCompile Include="SourceCode\Event\EventService.cpp" />
+    <ClCompile Include="SourceCode\Gameplay\GameService.cpp" />
+    <ClCompile Include="SourceCode\Graphics\GraphicService.cpp" />
+    <ClCompile Include="SourceCode\Player\PlayerController.cpp" />
+    <ClCompile Include="SourceCode\Player\PlayerModel.cpp" />
     <ClCompile Include="SourceCode\PlayerService.cpp" />
-    <ClCompile Include="SourceCode\PlayerView.cpp" />
-    <ClCompile Include="SourceCode\ServiceLocator.cpp" />
+    <ClCompile Include="SourceCode\Player\PlayerView.cpp" />
+    <ClCompile Include="SourceCode\Global\ServiceLocator.cpp" />
     <ClCompile Include="SourceCode\TimeService.cpp" />
   </ItemGroup>
   <ItemGroup>
