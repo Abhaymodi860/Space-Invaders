@@ -1,5 +1,5 @@
 #pragma once
-#include "../../Header/UI/MainMenu/MainMenuController.h"
+#include "../../Header/UI/MainMenu/MainMenuUIController.h"
 
 namespace UI
 {
