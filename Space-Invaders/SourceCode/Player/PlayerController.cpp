@@ -6,6 +6,10 @@
 #include<algorithm>
 
 namespace Player {
+
+	using namespace Event;
+	using namespace Global;
+
 	PlayerController::PlayerController()
 	{
 		player_view = new PlayerView();
@@ -42,6 +46,7 @@ namespace Player {
 		return player_model->getPlayerPosition();
 	}
 
+	/*
 	void PlayerController::processPlayerInput()
 	{
 		// we will move this to event service at a later time
@@ -51,6 +56,22 @@ namespace Player {
 		}
 		// we will move this to event service at a later time
 		if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Right)))
+		{
+			moveRight();
+		}
+	}
+	*/
+
+	void PlayerController::processPlayerInput()
+	{
+		EventService* event_service = ServiceLocator::getInstance()->getEventService();
+
+		if (event_service->pressedLeftKey() || event_service->pressedAKey())
+		{
+			moveLeft();
+		}
+
+		if (event_service->pressedRightKey() || event_service->pressedDKey())
 		{
 			moveRight();
 		}
